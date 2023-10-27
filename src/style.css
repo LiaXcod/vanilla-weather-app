@@ -1,9 +1,13 @@
+body {
+  background-color: #f9f7fd;
+}
 .weather-app {
   border: 3px solid #dadde1;
   border-radius: 10px;
   padding: 20px;
   margin: 20px auto;
   max-width: 800px;
+  background-color: white;
 }
 header {
   text-align: center;
@@ -22,7 +26,8 @@ h2 {
   margin: 0 5px;
   font-weight: 400;
 }
-.principal {
+
+.today {
   text-align: center;
   margin: 20px 10px 30px;
 }
@@ -61,4 +66,13 @@ h3 {
 .city {
   font-size: 12px;
   margin-left: 2px;
+}
+.link {
+  font-size: 12px;
+  padding: 6px;
+  margin: auto;
+  max-width: 800px;
+}
+.true-link {
+  color: #895df1;
 }
