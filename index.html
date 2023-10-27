@@ -1,23 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width, initial-scale=1.0" />
-    <title>Weather App</title>
-    <link rel="stylesheet" href="src/style.css" />
 
+    <title>Weather App</title>
+
+    <link rel="stylesheet" href="src/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous" />
+     <script
+      src="https://kit.fontawesome.com/36139332d9.js"
       crossorigin="anonymous"
-    />
+    ></script>
+
   </head>
   <body>
+    
     <div class="container">
-      <h1>Hello World</h1>
-      <button type="button" class="btn btn-primary">Primary</button>
+    <div class="weather-app">
+        <header>
+          <h1>Lisbon, PT</h1>
+          <h2>22/09 Thursday</h2>
+        </header>
+
+        <div class="principal">
+          <i class="fa-solid fa-cloud-sun cloud-icon"></i>
+          <span class="degrees"> 18ºC </span>
+          <h3>Precipitation 1%/ Humidity 73%/ Wind 6km/h</h3>
+        </div>
+
+        <div class="next-days">
+          <div class="grid">
+            <div class="row">
+              <div class="col">Saturday</div>
+              <div class="col">Sunday</div>
+              <div class="col">Monday</div>
+              <div class="col">Tuesday</div>
+              <div class="col">Wednesday</div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <i class="fa-solid fa-circle mini-icon sun"></i>
+              </div>
+              <div class="col">
+                <i class="fa-solid fa-circle mini-icon sun"></i>
+              </div>
+              <div class="col">
+                <i class="fa-solid fa-circle mini-icon sun"></i>
+              </div>
+              <div class="col">
+                <i class="fa-solid fa-cloud-sun mini-icon cloudy"></i>
+              </div>
+              <div class="col">
+                <i class="fa-solid fa-cloud-sun mini-icon cloudy"></i>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">16-27ºC</div>
+              <div class="col">17-28ºC</div>
+              <div class="col">18-28ºC</div>
+              <div class="col">17-27ºC</div>
+              <div class="col">18-27ºC</div>
+            </div>
+          </div>
+        </div>
+
+        <form class="city">
+          <input type="text" placeholder="Enter a city" />
+          <input type="submit" placeholder="SEARCH" />
+        </form>
     </div>
+
     <script src="src/app.js"></script>
   </body>
 </html>
