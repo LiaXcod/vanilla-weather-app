@@ -54,11 +54,19 @@ function displayTemperature(response) {
 
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+
+  let iconElement = document.querySelector("#icon");
+  let iconId = response.data.weather[0].icon;
+  console.log(iconId);
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${iconId}@2x.png`
+  );
 }
 
 let apiKey = "8036c849d00de892979a86e56e32649b";
 let apiEndPoint = "https://api.openweathermap.org/data/2.5/weather?";
-let cityName = "London";
+let cityName = "Madrid";
 let units = "metric";
 let apiUrl = `${apiEndPoint}q=${cityName}&appid=${apiKey}&units=${units}`;
 
