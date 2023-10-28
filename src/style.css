@@ -36,15 +36,29 @@ h2 {
   font-size: 50px;
   margin-left: 40px;
 }
-.degrees {
+.temperature {
   font-size: 30px;
   margin-left: 4px;
 }
+.units {
+  font-size: 12px;
+  position: relative;
+  top: -12px;
+  left: -2px;
+}
+
+.celsius,
+.farenheit {
+  color: black;
+  text-decoration: none;
+}
+
 h3 {
   display: inline;
   text-align: right;
   font-size: 15px;
   margin-left: 15px;
+  color: #838383;
 }
 .next-days {
   border: 1.5px solid #dadde1;
