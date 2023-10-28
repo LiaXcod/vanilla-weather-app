@@ -25,29 +25,30 @@
     <div class="container">
       <div class="weather-app">
         <header>
-          <h1 id="city">Lisbon, PT</h1>
-          <h2 id="date">22/09 Thursday</h2>
+          <h1 id="city"></h1>
+          <h2 id="date"></h2>
         </header>
 
         <div class="today">
           <img src="" alt="" class="icon" id="icon" />
 
-          <span class="temperature" id="temp"> 18 </span>
+          <span class="temperature" id="temp"> </span>
           <span class="units">
             <a href="#" class="celsius" id="celsius">ºC</a> |
             <a href="#" class="farenheit" id="farenheit">ºF</a>
           </span>
 
           <h3>
-            Humidity <span id="humidity">80</span>% | Wind
-            <span id="wind">6</span>km/h
+            Humidity <span id="humidity"></span>% | Wind
+            <span id="wind"></span>km/h
           </h3>
         </div>
-
-        <form class="city">
-          <input type="text" placeholder="Enter a city" />
-          <input type="submit" placeholder="SEARCH" />
-        </form>
+        <div class="form">
+          <form class="city-form" id="search-form">
+            <input type="search" placeholder="Enter a city" id="city-input" />
+            <input type="submit" value="search" />
+          </form>
+        </div>
       </div>
 
       <p class="link">

@@ -60,27 +60,13 @@ h3 {
   margin-left: 15px;
   color: #838383;
 }
-.next-days {
-  border: 1.5px solid #dadde1;
-  border-radius: 10px;
-  background-color: rgba(174, 172, 172, 0.1);
-  margin-top: -15px;
-  margin-bottom: 30px;
-}
-.grid {
-  margin: 30px 10px;
+.form {
+  max-width: 800px;
+  position: relative;
   text-align: center;
-  font-size: 16px;
 }
-.sun {
-  color: rgb(255, 204, 0);
-}
-.cloudy {
-  color: rgba(174, 172, 172, 0.995);
-}
-.city {
+.city-form {
   font-size: 12px;
-  margin-left: 2px;
 }
 .link {
   font-size: 12px;
