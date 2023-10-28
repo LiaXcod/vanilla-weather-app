@@ -30,19 +30,29 @@
         </header>
 
         <div class="today">
-          <img src="" alt="" class="icon" id="icon" />
-
-          <span class="temperature" id="temp"> </span>
-          <span class="units">
-            <a href="#" class="celsius" id="celsius">ºC</a> |
-            <a href="#" class="farenheit" id="farenheit">ºF</a>
-          </span>
-
-          <h3>
-            Humidity <span id="humidity"></span>% | Wind
-            <span id="wind"></span>km/h
-          </h3>
+          <div class="grid">
+            <div class="row">
+              <div class="col">
+                <img src="" alt="" class="icon" id="icon" />
+                <span class="temperature" id="temp"> </span>
+                <span class="units">
+                  <a href="#" class="celsius" id="celsius">ºC</a> |
+                  <a href="#" class="farenheit" id="farenheit">ºF</a>
+                </span>
+              </div>
+              <div class="col">
+                <ul>
+                  <li class="description" id="description"></li>
+                  <li>
+                    Humidity <span id="humidity"></span>% | Wind
+                    <span id="wind"></span>km/h
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div class="form">
           <form class="city-form" id="search-form">
             <input type="search" placeholder="Enter a city" id="city-input" />

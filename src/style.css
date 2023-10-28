@@ -6,7 +6,7 @@ body {
   border-radius: 10px;
   padding: 20px;
   margin: 20px auto;
-  max-width: 800px;
+  max-width: 600px;
   background-color: white;
 }
 header {
@@ -22,7 +22,7 @@ h1 {
   margin: 0 5px;
 }
 h2 {
-  font-size: 18px;
+  font-size: 16px;
   margin: 0 5px;
   font-weight: 400;
 }
@@ -32,18 +32,18 @@ h2 {
   margin: 10px 10px 0px;
 }
 .icon {
-  font-size: 50px;
-  margin-left: 40px;
-  margin-bottom: 14px;
+  font-size: 42px;
+  margin-left: 45px;
+  margin-bottom: 20px;
 }
 .temperature {
-  font-size: 30px;
+  font-size: 42px;
   margin-left: 4px;
 }
 .units {
   font-size: 12px;
   position: relative;
-  top: -12px;
+  top: -22px;
   left: -2px;
 }
 
@@ -53,13 +53,18 @@ h2 {
   text-decoration: none;
 }
 
-h3 {
+ul {
+  list-style-type: none;
   display: inline;
-  text-align: right;
+  text-align: left;
   font-size: 15px;
-  margin-left: 15px;
+  margin-left: auto;
   color: #838383;
 }
+.description:first-letter {
+  text-transform: capitalize;
+}
+
 .form {
   max-width: 800px;
   position: relative;
@@ -72,7 +77,7 @@ h3 {
   font-size: 12px;
   padding: 6px;
   margin: auto;
-  max-width: 800px;
+  max-width: 600px;
 }
 .true-link {
   color: #ef972b;
