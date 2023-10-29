@@ -47,10 +47,12 @@ h2 {
   left: -2px;
 }
 
-.celsius,
-.farenheit {
+.active {
   color: black;
   text-decoration: none;
+}
+.inactive {
+  color: #ef972b;
 }
 
 ul {

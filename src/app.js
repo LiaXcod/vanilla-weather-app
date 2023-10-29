@@ -28,9 +28,10 @@ function formatDate(timestamp) {
     "December",
   ];
   let month = months[date.getMonth()];
+
   let hours = date.getHours();
   if (hours < 10) {
-    hours = `0${minutes}`;
+    hours = `0${hours}`;
   }
   let minutes = date.getMinutes();
   if (minutes < 10) {
@@ -90,12 +91,16 @@ function convertToFarenheit(event) {
   let temperatureElement = document.querySelector("#temp");
   let farenheitTemp = Math.round((celsiusTemperature * 9) / 5 + 32);
   temperatureElement.innerHTML = farenheitTemp;
+  farenheitElement.classList.add("active");
+  celsiusElement.classList.remove("active");
 }
 
 function convertToCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temp");
   temperatureElement.innerHTML = celsiusTemperature;
+  celsiusElement.classList.add("active");
+  farenheitElement.classList.remove("active");
 }
 
 let celsiusTemperature = null;
