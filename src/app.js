@@ -42,40 +42,41 @@ function formatDate(timestamp) {
 }
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temp");
-  celsiusTemperature = Math.round(response.data.main.temp);
+  celsiusTemperature = Math.round(response.data.temperature.current);
   temperatureElement.innerHTML = celsiusTemperature;
 
   let cityElement = document.querySelector("#city");
-  cityElement.innerHTML = response.data.name;
+  cityElement.innerHTML = response.data.city;
 
   let descriptionElement = document.querySelector("#description");
-  let description = response.data.weather[0].description;
+  let description = response.data.condition.description;
   descriptionElement.innerHTML = description;
 
   let humidityElement = document.querySelector("#humidity");
-  humidityElement.innerHTML = response.data.main.humidity;
+  humidityElement.innerHTML = response.data.temperature.humidity;
 
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = Math.round(response.data.wind.speed);
 
   let dateElement = document.querySelector("#date");
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  dateElement.innerHTML = formatDate(response.data.time * 1000);
 
   let iconElement = document.querySelector("#icon");
-  let iconId = response.data.weather[0].icon;
+  let iconId = response.data.condition.icon;
 
   iconElement.setAttribute(
     "src",
-    `https://openweathermap.org/img/wn/${iconId}@2x.png`
+    `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${iconId}.png`
   );
+
   iconElement.setAttribute("alt", `${description}`);
 }
 
 function search(cityName) {
-  let apiKey = "8036c849d00de892979a86e56e32649b";
-  let apiEndPoint = "https://api.openweathermap.org/data/2.5/weather?";
+  let apiKey = "ec0bbcffe35aa844b4bao9b2t41866d0";
+  let apiEndPoint = "https://api.shecodes.io/weather/v1/current?";
   let units = "metric";
-  let apiUrl = `${apiEndPoint}q=${cityName}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `${apiEndPoint}query=${cityName}&key=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(displayTemperature);
 }
