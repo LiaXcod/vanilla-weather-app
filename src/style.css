@@ -67,6 +67,24 @@ ul {
   text-transform: capitalize;
 }
 
+.weather-forecast {
+  margin-top: 10px;
+  margin-bottom: 40px;
+  padding: 10px;
+  text-align: center;
+  border: 1.5px solid #dadde1;
+  border-radius: 10px;
+  background-color: rgba(174, 172, 172, 0.1);
+  font-size: 20px;
+  color: black;
+}
+.weather-forecast-date {
+  opacity: 1;
+}
+.weather-forecast-temperature {
+  font-size: 12px;
+  opacity: 0.8;
+}
 .form {
   max-width: 800px;
   position: relative;
