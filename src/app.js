@@ -116,3 +116,30 @@ let celsiusElement = document.querySelector("#celsius");
 celsiusElement.addEventListener("click", convertToCelsius);
 
 search("Lisbon");
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Wed", "Thu", "Fri", "Sat"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-2">
+       <div class="weather-forecast-date">${day}</div>
+         <i class="fa-solid fa-cloud-sun cloud-icon"></i>
+         <div class="weather-forecast-temperature">
+              <span class="weather-forecast-min"> 12ºC </span>
+               <span class="weather-forecast-max"> 18ºC </span>
+                  </div>
+                  </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+displayForecast();
