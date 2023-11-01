@@ -70,6 +70,8 @@ function displayTemperature(response) {
   );
 
   iconElement.setAttribute("alt", `${description}`);
+
+  getForecast(response.data.coordinates);
 }
 
 function search(cityName) {
@@ -104,6 +106,57 @@ function convertToCelsius(event) {
   farenheitElement.classList.remove("active");
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[date.getDay()];
+}
+
+function displayForecast(response) {
+  let forecastHTML = `<div class="row">`;
+
+  let forecast = response.data.daily;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 7 && index > 0) {
+      forecastHTML =
+        forecastHTML +
+        `
+      <div class="col-2">
+      <div class="weather-forecast-date">${formatDay(forecastDay.time)}</div>
+      <img src=${
+        forecastDay.condition.icon_url
+      } alt="" class="icons" id="icons" />
+      <div class="weather-forecast-temperature">
+      <span class="weather-forecast-min"> ${Math.round(
+        forecastDay.temperature.minimum
+      )} - </span>
+        <span class="weather-forecast-max"> ${Math.round(
+          forecastDay.temperature.maximum
+        )}ºC </span>
+          </div>
+          </div>
+          `;
+    }
+  });
+
+  let forecastElement = document.querySelector("#forecast");
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let lon = coordinates.longitude;
+  let lat = coordinates.latitude;
+
+  let apiEndPoint = "https://api.shecodes.io/weather/v1/forecast?";
+  let apiKey = "ec0bbcffe35aa844b4bao9b2t41866d0";
+  let units = "metric";
+  let apiUrl = `${apiEndPoint}lon=${lon}&lat=${lat}&key=${apiKey}&units=${units}`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
+
+//global variables//
 let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
@@ -115,31 +168,5 @@ farenheitElement.addEventListener("click", convertToFarenheit);
 let celsiusElement = document.querySelector("#celsius");
 celsiusElement.addEventListener("click", convertToCelsius);
 
+//function calling
 search("Lisbon");
-
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-
-  let days = ["Wed", "Thu", "Fri", "Sat"];
-
-  let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-    <div class="col-2">
-       <div class="weather-forecast-date">${day}</div>
-         <i class="fa-solid fa-cloud-sun cloud-icon"></i>
-         <div class="weather-forecast-temperature">
-              <span class="weather-forecast-min"> 12ºC </span>
-               <span class="weather-forecast-max"> 18ºC </span>
-                  </div>
-                  </div>
-  `;
-  });
-
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
-}
-
-displayForecast();

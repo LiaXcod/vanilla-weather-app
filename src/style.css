@@ -80,6 +80,12 @@ ul {
 }
 .weather-forecast-date {
   opacity: 1;
+  font-size: 12px;
+}
+.icons {
+  width: 69px;
+  height: 69px;
+  display: block;
 }
 .weather-forecast-temperature {
   font-size: 12px;
