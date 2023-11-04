@@ -92,23 +92,6 @@ function handleSubmit(event) {
   }
 }
 
-function convertToFarenheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temp");
-  let farenheitTemp = Math.round((celsiusTemperature * 9) / 5 + 32);
-  temperatureElement.innerHTML = farenheitTemp;
-  farenheitElement.classList.add("active");
-  celsiusElement.classList.remove("active");
-}
-
-function convertToCelsius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temp");
-  temperatureElement.innerHTML = celsiusTemperature;
-  celsiusElement.classList.add("active");
-  farenheitElement.classList.remove("active");
-}
-
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -158,16 +141,9 @@ function getForecast(coordinates) {
 }
 
 //global variables//
-let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-
-let farenheitElement = document.querySelector("#farenheit");
-farenheitElement.addEventListener("click", convertToFarenheit);
-
-let celsiusElement = document.querySelector("#celsius");
-celsiusElement.addEventListener("click", convertToCelsius);
 
 //function calling
 search("Lisbon");
