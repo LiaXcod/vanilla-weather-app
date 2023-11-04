@@ -87,6 +87,9 @@ function handleSubmit(event) {
   event.preventDefault();
   let cityElement = document.querySelector("#city-input");
   search(cityElement.value);
+  if (cityElement.value == "") {
+    alert("Please enter a city name");
+  }
 }
 
 function convertToFarenheit(event) {
@@ -127,12 +130,10 @@ function displayForecast(response) {
         forecastDay.condition.icon_url
       } alt="" class="icons" id="icons" />
       <div class="weather-forecast-temperature">
-      <span class="weather-forecast-min"> ${Math.round(
-        forecastDay.temperature.minimum
-      )} - </span>
-        <span class="weather-forecast-max"> ${Math.round(
-          forecastDay.temperature.maximum
-        )}ºC </span>
+      <span class="weather-forecast-min"> 
+      ${Math.round(forecastDay.temperature.minimum)} - </span>
+        <span class="weather-forecast-max"> 
+        ${Math.round(forecastDay.temperature.maximum)}ºC </span>
           </div>
           </div>
           `;
